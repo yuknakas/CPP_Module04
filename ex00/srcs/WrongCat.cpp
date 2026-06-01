@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 18:12:35 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 18:17:29 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/05/31 18:26:05 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 WrongCat::WrongCat( void ) : WrongAnimal()
 {
 	this->m_type = "WrongCat";
-	std::cout << CYAN << "WrongAnimal CONSTRUCTOR Called" << RESET << std::endl;
+	std::cout << CYAN << "WrongCat CONSTRUCTOR Called" << RESET << std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << CYAN << "WrongAnimal DESTRUCTOR Called" << RESET << std::endl;
+	std::cout << CYAN << "WrongCat DESTRUCTOR Called" << RESET << std::endl;
 }
 
 void	WrongCat::makeSound( void ) const
