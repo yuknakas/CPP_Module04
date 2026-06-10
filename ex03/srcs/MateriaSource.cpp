@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:32:37 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:45:26 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/06/10 10:58:15 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ AMateria	*MateriaSource::createMateria( std::string const &type )
 	}
 	std::cout << RED << "Error: No Materia with Type <" << type << "> Found"
 	<< RESET << std::endl;
+	return (NULL);
 }

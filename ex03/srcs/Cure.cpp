@@ -6,13 +6,13 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:20:56 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 20:25:37 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/06/10 10:59:16 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cure.hpp"
 
-Cure::Cure( void ) : AMateria( "Cure" )
+Cure::Cure( void ) : AMateria( "cure" )
 {
 }
 

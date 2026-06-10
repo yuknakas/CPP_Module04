@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:17:53 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 20:21:48 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/06/10 10:57:50 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 // =========================== AMateria Abstract Class =======================
 
