@@ -6,15 +6,32 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:37:47 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 17:58:59 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:29:52 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Animal.hpp"
 
 Animal::Animal( void )
+:m_type("DefaultAnimal")
 {
 	std::cout << RED << "Animal CONSTRUCTOR Called" << RESET << std::endl;
+}
+
+Animal::Animal( const Animal &other )
+{
+	std::cout << RED << "Animal COPY CONSTRUCTOR Called" << RESET << std::endl;
+	*this = other;
+}
+
+Animal	&Animal::operator=( const Animal &other )
+{
+	std::cout << RED << "Animal COPY ASSIGNMENT OPERATOR Called" << RESET << std::endl;
+	if (this != &other)
+	{
+		this->m_type = other.getType();
+	}
+	return (*this);
 }
 
 Animal::~Animal()

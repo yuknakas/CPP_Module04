@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:42:29 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 17:57:54 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:25:51 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class Cat : virtual public Animal
 public:
 	// constructor/destructor
 	Cat( void );
-	~Cat();
+	Cat( const Cat &other );
+	Cat	&operator=( const Cat &other );
+	virtual ~Cat();
 	
 	// member functions
 	void	makeSound( void ) const;

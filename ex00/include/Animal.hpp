@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:32:50 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 18:07:29 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/07 19:25:12 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ protected:
 public:
 	// constructor/destructor
 	Animal( void );
+	Animal( const Animal &other );
+	Animal	&operator=( const Animal &other );
 	virtual ~Animal();
 
 	// getter
