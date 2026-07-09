@@ -6,11 +6,20 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:32:30 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 19:47:44 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:34:10 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Character.hpp"
+
+Character::Character( void )
+:m_name("nobody")
+{
+	for (int i = 0; i < 4; i++)
+		m_inventory[i] = NULL;
+	for (int i = 0; i < 10; i++)
+		m_trash[i] = NULL;
+}
 
 Character::Character( std::string const &name )
 :m_name(name)
@@ -19,6 +28,27 @@ Character::Character( std::string const &name )
 		m_inventory[i] = NULL;
 	for (int i = 0; i < 10; i++)
 		m_trash[i] = NULL;
+}
+
+Character::Character( const Character &other )
+{
+	*this = other;
+}
+
+Character	&Character::operator=( const Character &other )
+{
+	if (this != &other)
+	{
+		this->m_name = other.getName();
+		for (int i = 0; i < 4; i++)
+		{
+			if (other.m_inventory[i])
+				this->m_inventory[i] = other.m_inventory[i]->clone();
+			else
+				this->m_inventory[i] = NULL;
+		}
+	}
+	return (*this);
 }
 
 Character::~Character()

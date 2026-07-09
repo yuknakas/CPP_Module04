@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 18:01:22 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 18:17:33 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:26:08 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ protected:
 public:
 	// constructor/destructor
 	WrongAnimal( void );
+	WrongAnimal( const WrongAnimal &other );
+	WrongAnimal	&operator=( const WrongAnimal &other );
 	virtual ~WrongAnimal();
 
 	// getter

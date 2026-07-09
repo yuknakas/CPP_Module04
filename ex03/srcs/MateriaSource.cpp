@@ -6,16 +6,38 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:32:37 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:58:15 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:36:06 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/MateriaSource.hpp"
 
-MateriaSource::MateriaSource( void )
+MateriaSource::MateriaSource( void ) : IMateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 		m_storage[i] = NULL;
+}
+
+MateriaSource::MateriaSource( const MateriaSource &other )
+{
+	for (int i = 0; i < 4; i++)
+		m_storage[i] = NULL;
+	*this = other;
+}
+
+MateriaSource	&MateriaSource::operator=( const MateriaSource &other )
+{
+	if (this != &other)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (other.m_storage[i])
+				this->m_storage[i] = other.m_storage[i]->clone();
+			else
+				this->m_storage[i] = NULL;
+		}
+	}
+	return (*this);
 }
 
 MateriaSource::~MateriaSource()

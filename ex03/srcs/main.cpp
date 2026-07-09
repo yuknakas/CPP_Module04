@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:47:06 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:48:59 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:36:30 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+
 	return 0;
 }

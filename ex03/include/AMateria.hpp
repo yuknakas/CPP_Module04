@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:17:53 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:57:50 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:40:05 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ class AMateria
 
 	public:
 		// constructor and destructor
+		AMateria( void );
 		AMateria( std::string const &type );
 		AMateria( const AMateria &other );
+		AMateria	&operator=( const AMateria &other );
 		virtual ~AMateria();
 		
 		// getter
@@ -37,9 +39,6 @@ class AMateria
 		// member functions
 		virtual AMateria	*clone( void ) const = 0;
 		virtual void		use( ICharacter &target ) = 0;
-
-		// operator override
-		AMateria			&operator=( const AMateria &other );
 };
 
 #define RED "\033[31m"

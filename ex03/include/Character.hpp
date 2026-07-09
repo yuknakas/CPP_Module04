@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:24:57 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 19:41:32 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:18:41 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ class Character : public ICharacter
 		
 	public:
 		// constructor/destructor
+		Character( void );
 		Character( std::string const &name );
+		Character( const Character &other );
+		Character	&operator=( const Character &other );
 		~Character();
 		
 		// member functions from Interface

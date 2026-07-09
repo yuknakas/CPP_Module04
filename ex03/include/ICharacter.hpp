@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:36:14 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:57:42 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:38:59 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ class AMateria;
 
 // ========================= ICharacter Interface ===========================
 
+
+
 class ICharacter
 {
 	public:
+		// OCF not implemented as subject specifies implementation of interface
 		// destrcutor
 		virtual ~ICharacter() {};
 		

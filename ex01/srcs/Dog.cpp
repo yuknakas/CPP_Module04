@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:51:30 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/07/08 23:16:42 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:23:53 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog( void ) : Animal()
 	this->m_type = "Dog";
 }
 
-Dog::Dog( const Dog &other ) : Animal::Animal( other )
+Dog::Dog( const Dog &other ) : Animal( other )
 {
 	std::cout << GREEN << "Dog COPY CONSTRUCTOR Called" << RESET << std::endl;
 	*this = other;

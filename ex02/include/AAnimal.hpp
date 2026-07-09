@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:32:50 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 22:28:57 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:21:42 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 // ============================== Animal Class ===============================
 
-class Animal
+class AAnimal
 {
 protected:
 	std::string	m_type;
@@ -27,15 +27,14 @@ protected:
 
 public:
 	// constructor/destructor
-	Animal( void );
-	Animal( const Animal &other );
-	virtual ~Animal();
+	AAnimal( void );
+	AAnimal( const AAnimal &other );
+	AAnimal	&operator=( const AAnimal &other );
+	virtual ~AAnimal();
 
 	// getter
 	std::string		getType( void ) const;
 	Brain*			getBrain( void ) const;
-
-	Animal		&operator=( const Animal &other );
 
 	// member functions
 	virtual void	makeSound( void ) const = 0;

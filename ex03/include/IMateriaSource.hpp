@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:46:17 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 19:49:13 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:29:40 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class IMateriaSource
 {
 	public:
+		// OCF not implemented as subject specifies implementation of interface
 		// destructor
 		virtual ~IMateriaSource() {};
 

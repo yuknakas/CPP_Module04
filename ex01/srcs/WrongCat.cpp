@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 18:12:35 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/07/08 19:29:33 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:25:07 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongCat::WrongCat( void ) : WrongAnimal()
 	std::cout << CYAN << "WrongCat CONSTRUCTOR Called" << RESET << std::endl;
 }
 
-WrongCat::WrongCat( const WrongCat &other ) : WrongAnimal::WrongAnimal( other )
+WrongCat::WrongCat( const WrongCat &other ) : WrongAnimal( other )
 {
 	std::cout << CYAN << "WrongCat COPY CONSTRUCTOR Called" << RESET << std::endl;
 	*this = other;

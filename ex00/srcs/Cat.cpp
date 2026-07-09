@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:43:52 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/07/08 19:25:56 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:24:06 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat( void ) : Animal()
 	std::cout << YELLOW << "Cat DEFAULT CONSTRUCTOR Called" << RESET << std::endl;
 }
 
-Cat::Cat( const Cat &other ) : Animal::Animal( other )
+Cat::Cat( const Cat &other ) : Animal( other )
 {
 	std::cout << YELLOW << "Cat COPY CONSTRUCTOR Called" << RESET << std::endl;
 	*this = other;
