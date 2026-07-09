@@ -6,21 +6,32 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:43:52 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 20:11:58 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:23:39 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cat.hpp"
 
-Cat::Cat( void ) : Animal()
+Cat::Cat( void ) : AAnimal()
 {
-	this->m_type = "Cat";
 	std::cout << YELLOW << "Cat CONSTRUCTOR Called" << RESET << std::endl;
+	this->m_type = "Cat";
 }
 
-Cat::Cat( const Cat &other ) : Animal( other )
+Cat::Cat( const Cat &other ) : AAnimal( other )
 {
 	std::cout << MAGENTA << "Cat COPY CONSTRUCTOR Called" << RESET << std::endl;
+	*this = other;
+}
+
+Cat	&Cat::operator=( const Cat &other )
+{
+	std::cout << MAGENTA << "Cat COPY CONSTRUCTOR Called" << RESET << std::endl;
+	if (this != &other)
+	{
+		AAnimal::operator=( other );
+	}
+	return (*this);
 }
 
 Cat::~Cat()

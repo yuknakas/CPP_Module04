@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:43:52 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 20:11:58 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 22:44:25 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,24 @@
 
 Cat::Cat( void ) : Animal()
 {
-	this->m_type = "Cat";
 	std::cout << YELLOW << "Cat CONSTRUCTOR Called" << RESET << std::endl;
+	this->m_type = "Cat";
 }
 
 Cat::Cat( const Cat &other ) : Animal( other )
 {
 	std::cout << MAGENTA << "Cat COPY CONSTRUCTOR Called" << RESET << std::endl;
+	*this = other;
+}
+
+Cat	&Cat::operator=( const Cat &other )
+{
+	std::cout << MAGENTA << "Cat COPY CONSTRUCTOR Called" << RESET << std::endl;
+	if (this != &other)
+	{
+		Animal::operator=( other );
+	}
+	return (*this);
 }
 
 Cat::~Cat()

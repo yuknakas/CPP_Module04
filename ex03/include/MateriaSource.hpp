@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 19:42:17 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/10 10:35:37 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:30:20 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class MateriaSource : public IMateriaSource
 	public:
 		// constructor / destructor
 		MateriaSource( void );
+		MateriaSource( const MateriaSource &other );
+		MateriaSource	&operator=( const MateriaSource &other );
 		~MateriaSource();
 		
 		// member functions

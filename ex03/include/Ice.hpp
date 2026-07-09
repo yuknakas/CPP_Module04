@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:51:02 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/06/06 20:22:24 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/09 09:39:13 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ class Ice : public AMateria
 		// constructor / destructor
 		Ice( void );
 		Ice( const Ice &other );
+		Ice			&operator=( const Ice &other );
 		~Ice();
 		
 		// member functions
 		AMateria	*clone( void ) const;
 		void		use( ICharacter &target );
-
-		// operator override
-		Ice			&operator=( const Ice &other );
 };

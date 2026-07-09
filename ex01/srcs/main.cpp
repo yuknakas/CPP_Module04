@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:52:41 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 20:07:33 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:13:42 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,48 @@
 #include "../include/WrongAnimal.hpp"
 #include "../include/WrongCat.hpp"
 
-void test_array()
+int main()
 {
-	int	i;
-	Animal*	animal[10];
-
-	i = 0;
-	while (i < 5)
+	std::cout << "==================== TEST CASES ====================" << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "==================== 10 animals ====================" << std::endl;
+	Animal	*animals[10];
+	for (int i = 0; i < 10; i++)
 	{
-		animal[i] = new Cat();
-		i++;
+		if (i < 5)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
 	}
-	while (i < 10)
-	{
-		animal[i] = new Dog();
-		i++;
-	}
+	std::cout << std::endl;
+	std::cout << "==================== Make Sound ====================" << std::endl;
+	for (int i = 0; i < 10; i++)
+		animals[i]->makeSound();
 
-	i = 0;
-	while (i < 10)
-	{
-		delete animal[i];
-		i++;
-	}
-}
+	std::cout << std::endl;
+	std::cout << "==================== Delete ====================" << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete (animals[i]);
+	
+	std::cout << std::endl;
+	std::cout << "==================== Deep Copy ====================" << std::endl;
+	Dog	*dog1 = new Dog();
+	dog1->getBrain()->setIdea("Woof", 0);
+	Dog	*dog2 = new Dog(*dog1);
+	std::cout << "==================== Test Copy ====================" << std::endl;
+	std::cout << "Dog 1: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Dog 2: " << dog2->getBrain()->getIdea(0) << std::endl;
 
-void test_deep_copy()
-{
-	Dog*	j = new Dog();
-	Animal* k = new Dog(*j);
+	std::cout << "==================== Test Change ====================" << std::endl;
+	dog1->getBrain()->setIdea("Bow-wow", 0);
+	std::cout << "Dog 1: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Dog 2: " << dog2->getBrain()->getIdea(0) << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "==================== Destroy ====================" << std::endl;
+	delete dog1;
+	delete dog2;
 
-	delete(j);
-	delete(k);
-}
-
-int	main()
-{
-	test_array();
-	test_deep_copy();
 	return 0;
 }

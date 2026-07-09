@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:32:50 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 19:54:31 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 22:42:08 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,12 @@ public:
 	// constructor/destructor
 	Animal( void );
 	Animal( const Animal &other );
+	Animal	&operator=( const Animal &other );
 	virtual ~Animal();
 
 	// getter
 	std::string		getType( void ) const;
 	Brain*			getBrain( void ) const;
-
-	Animal		&operator=( const Animal &other );
 
 	// member functions
 	virtual void	makeSound( void ) const;

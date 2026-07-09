@@ -6,56 +6,39 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:52:41 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/05/31 22:29:38 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:26:42 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "../include/AAnimal.hpp"
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
 
 #include "../include/WrongAnimal.hpp"
 #include "../include/WrongCat.hpp"
 
-void test_array()
+int main()
 {
-	int	i;
-	Animal*	animal[10];
+	std::cout << "==================== TEST CASES ====================" << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "==================== Deep Copy ====================" << std::endl;
+	Dog	*dog1 = new Dog();
+	dog1->getBrain()->setIdea("Woof", 0);
+	Dog	*dog2 = new Dog(*dog1);
+	std::cout << "==================== Test Copy ====================" << std::endl;
+	std::cout << "Dog 1: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Dog 2: " << dog2->getBrain()->getIdea(0) << std::endl;
 
-	i = 0;
-	while (i < 5)
-	{
-		animal[i] = new Cat();
-		i++;
-	}
-	while (i < 10)
-	{
-		animal[i] = new Dog();
-		i++;
-	}
+	std::cout << "==================== Test Change ====================" << std::endl;
+	dog1->getBrain()->setIdea("Bow-wow", 0);
+	std::cout << "Dog 1: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Dog 2: " << dog2->getBrain()->getIdea(0) << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "==================== Destroy ====================" << std::endl;
+	delete dog1;
+	delete dog2;
 
-	i = 0;
-	while (i < 10)
-	{
-		delete animal[i];
-		i++;
-	}
-}
-
-void test_deep_copy()
-{
-	Dog*	j = new Dog();
-	Animal* k = new Dog(*j);
-
-	delete(j);
-	delete(k);
-}
-
-int	main()
-{
-	test_array();
-	test_deep_copy();
-
-	// Animal dog = Animal(); ERROR
 	return 0;
 }

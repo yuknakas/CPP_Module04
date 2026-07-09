@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:37:47 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/07/08 23:29:52 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/08 23:29:36 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "../include/AAnimal.hpp"
 
-Animal::Animal( void )
+AAnimal::AAnimal( void )
 {
-	std::cout << RED << "Animal CONSTRUCTOR Called" << RESET << std::endl;
+	std::cout << RED << "AAnimal CONSTRUCTOR Called" << RESET << std::endl;
 	this->m_brain = new Brain();
 }
 
-Animal::Animal( const Animal &other )
+AAnimal::AAnimal( const AAnimal &other )
 {
-	std::cout << RED << "Animal COPY CONSTRUCTOR Called" << RESET << std::endl;
+	std::cout << RED << "AAnimal COPY CONSTRUCTOR Called" << RESET << std::endl;
 	*this = other;
 }
 
-Animal	&Animal::operator=( const Animal &other )
+AAnimal	&AAnimal::operator=( const AAnimal &other )
 {
-	std::cout << RED << "Animal COPY ASSIGNMENT OPERATOR Called" << RESET << std::endl;
+	std::cout << RED << "AAnimal COPY ASSIGNMENT OPERATOR Called" << RESET << std::endl;
 	if (this != &other)
 	{
 		this->m_type = other.getType();
@@ -36,23 +36,23 @@ Animal	&Animal::operator=( const Animal &other )
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
 	delete (m_brain);
-	std::cout << RED << "Animal DESTRUCTOR Called" << RESET << std::endl;
+	std::cout << RED << "AAnimal DESTRUCTOR Called" << RESET << std::endl;
 }
 
-std::string	Animal::getType( void ) const
+std::string	AAnimal::getType( void ) const
 {
 	return (m_type);
 }
 
-Brain*		Animal::getBrain( void ) const
+Brain*		AAnimal::getBrain( void ) const
 {
 	return (m_brain);
 }
 
-void		Animal::makeSound( void ) const
+void		AAnimal::makeSound( void ) const
 {
-	std::cout << RED << "No sound defined for Animal" << RESET << std::endl;
+	std::cout << RED << "No sound defined for AAnimal" << RESET << std::endl;
 }
