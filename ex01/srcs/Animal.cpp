@@ -6,7 +6,7 @@
 /*   By: yuknakas <yuknakas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 17:37:47 by yuknakas          #+#    #+#             */
-/*   Updated: 2026/07/08 23:29:52 by yuknakas         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:10:54 by yuknakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Animal::Animal( void )
 Animal::Animal( const Animal &other )
 {
 	std::cout << RED << "Animal COPY CONSTRUCTOR Called" << RESET << std::endl;
+	this->m_brain = new Brain();
 	*this = other;
 }
 
